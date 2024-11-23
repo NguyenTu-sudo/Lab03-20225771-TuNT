@@ -1,0 +1,7 @@
+Question:
+- If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category.
+Does JAVA allow you to do this?
+
+Câu trả lời là: Có, Java cho phép tạo nhiều constructor với các tham số khác nhau trong cùng một lớp.
+Tuy nhiên các constructor phải có signature khác nhau (số lượng tham số hoặc kiểu tham số phải khác nhau)
+Nên sử dụng các pattern thiết kế phù hợp nếu muốn tạo đối tượng theo nhiều cách khác nhau
