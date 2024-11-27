@@ -2,6 +2,7 @@
 package DVD;
 
 public class DVD {
+  nbDigitalVideoDiscs++; 
     private String id;
     private String title;
     private String category;
@@ -9,16 +10,30 @@ public class DVD {
     private String director;
     private int length;
 
-    public DVD(String id, String title, String category, double d, String director, int length) {
-        this.id = id;
-        this.title = title;
-        this.category = category;
-        this.cost = d;
-        this.director = director;
-        this.length = length;
+
+    public DVD(String id, String title, String category, double cost, String director, int length) {
+    	nbDigitalVideoDiscs++; 
+        this.id = "DVD" + nbDigitalVideoDiscs;
+
+ 
+
+    public DVD(String oldTitle) {
+        this.title = oldTitle;
+        this.id = "Unknown";
+        this.category = "Unknown"; 
+        this.cost = 0.0; 
+        this.director = "Unknown";
+        this.length = 0;
     }
 
-    public void play() {
+    
+    public String toString() {
+        return String.format("DVD - %s - %s - %s - %d: %.2f $", 
+            title, category, director, length, cost);
+    }
+
+
+	public void play() {
         if (this.length > 0) {
             System.out.println("Playing DVD: " + this.title);
             System.out.println("DVD length: " + this.length);
@@ -32,10 +47,31 @@ public class DVD {
     }
 
     // Getters and Setters
-    public String getId() { return id; }
-    public String getTitle() { return title; }
-    public String getCategory() { return category; }
-    public double getCost() { return cost; }
-    public String getDirector() { return director; }
-    public int getLength() { return length; }
+    public String getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title2) {
+        this.title = title2;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public int getLength() {
+        return length;
+    }
 }

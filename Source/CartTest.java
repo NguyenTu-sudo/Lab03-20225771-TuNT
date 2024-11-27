@@ -17,11 +17,13 @@ public class CartTest {
         //In gio hang
         cart.printCart();
         
+
         // Tìm kiếm 
         System.out.println("Tìm kiếm DVD có ID 'DVD2':");
         cart.searchDVDById("DVD2");
 
         System.out.println("\nTìm kiếm DVD có ID 'DVD4':");
         cart.searchDVDById("DVD4");
+
     }
 }

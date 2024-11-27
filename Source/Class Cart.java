@@ -30,11 +30,13 @@ public class Cart {
             addItem(dvd);
         }
     }
+
     public void addDigitalVideoDisc(DVD dvd1, DVD dvd2) {
         addItem(dvd1);
         addItem(dvd2);
     }
     
+
     public void printCart() {
         System.out.println("***************************GIỎ HÀNG************************");
         System.out.println("Các mặt hàng đã đặt hàng:");
@@ -48,6 +50,7 @@ public class Cart {
         System.out.println("Tổng chi phí: " + String.format("%.2f", totalCost) + " $");
         System.out.println("******************************************************");
     }
+
     
     public void searchDVDById(String id) {
         boolean found = false;
