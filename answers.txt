@@ -1,7 +1,28 @@
-Question:
-- If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category.
-Does JAVA allow you to do this?
+*Câu hỏi:JAVA là ngôn ngữ lập trình Truyền theo giá trị hay Truyền theo tham chiếu?
+Trong Java, mọi thứ đều được truyền theo giá trị (pass-by-value). Tuy nhiên, điều này đôi khi gây nhầm lẫn vì cách giá trị được xử lý phụ thuộc vào loại dữ liệu.
+Giải thích:
+- Đối với kiểu dữ liệu nguyên thủy (primitive types):
++ Các giá trị của các kiểu nguyên thủy (int, double, char, boolean, v.v.) được truyền trực tiếp.
++ Khi truyền một biến nguyên thủy vào phương thức, một bản sao của giá trị được truyền đi. Do đó, việc thay đổi giá trị bên trong phương thức không ảnh hưởng đến giá trị ban đầu.
+- Đối với kiểu tham chiếu (reference types):
++ Các đối tượng (String, Array, List, v.v.) được truyền bằng giá trị của tham chiếu (bản sao của địa chỉ trong bộ nhớ).
+Điều này có nghĩa là:
++ Bản sao của tham chiếu (không phải bản thân đối tượng) được truyền đi.
++ Nếu thay đổi trạng thái nội dung của đối tượng thông qua tham chiếu này, đối tượng ban đầu sẽ thay đổi vì tham chiếu vẫn trỏ tới cùng một vùng nhớ.
++ Tuy nhiên, nếu bạn gán lại tham chiếu trong phương thức, nó chỉ thay đổi bản sao, không ảnh hưởng đến tham chiếu gốc.
+Tóm lại:
+Java luôn truyền theo giá trị:
+Với primitive types, giá trị thực được truyền (bản sao giá trị).
+Với reference types, giá trị tham chiếu (địa chỉ bộ nhớ) được truyền, nhưng không phải tham chiếu gốc.
 
-Câu trả lời là: Có, Java cho phép tạo nhiều constructor với các tham số khác nhau trong cùng một lớp.
-Tuy nhiên các constructor phải có signature khác nhau (số lượng tham số hoặc kiểu tham số phải khác nhau)
-Nên sử dụng các pattern thiết kế phù hợp nếu muốn tạo đối tượng theo nhiều cách khác nhau
+
+(Page 6)
+*After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+Sau khi gọi phương thức swap(jungleDVD, cinderellaDVD), tiêu đề của hai đối tượng jungleDVD và cinderellaDVD vẫn giữ nguyên vì trong Java,
+tất cả các đối tượng đều được truyền theo tham trị (pass-by-value), ngay cả khi đó là tham chiếu đến đối tượng.
+
+*After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+Tiêu đề của jungleDVD bị thay đổi vì phương thức changeTitle trực tiếp sửa đổi trường title của đối tượng jungleDVD 
+bằng cách gọi dvd.setTitle(title). Việc này cập nhật đối tượng jungleDVD gốc mà được truyền vào phương thức.
+
+
