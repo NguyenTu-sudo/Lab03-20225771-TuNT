@@ -2,22 +2,20 @@
 package DVD;
 
 public class DVD {
+  nbDigitalVideoDiscs++; 
     private String id;
     private String title;
     private String category;
     private double cost;
     private String director;
     private int length;
-    
- //Lab3
+
+
     public DVD(String id, String title, String category, double cost, String director, int length) {
-        this.id = id;
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
-        this.director = director;
-        this.length = length;
-    }
+    	nbDigitalVideoDiscs++; 
+        this.id = "DVD" + nbDigitalVideoDiscs;
+
+ 
 
     public DVD(String oldTitle) {
         this.title = oldTitle;
@@ -27,6 +25,13 @@ public class DVD {
         this.director = "Unknown";
         this.length = 0;
     }
+
+    
+    public String toString() {
+        return String.format("DVD - %s - %s - %s - %d: %.2f $", 
+            title, category, director, length, cost);
+    }
+
 
 	public void play() {
         if (this.length > 0) {
