@@ -25,7 +25,7 @@ public class Cart {
         }
         updateTotalCost();
     }
-    //Lab03 ---------
+    //Lab03 ------------
     public void addDigitalVideoDisc(DVD[] dvdList) {
         for (DVD dvd : dvdList) {
             addItem(dvd);
