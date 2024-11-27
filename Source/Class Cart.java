@@ -36,6 +36,7 @@ public class Cart {
         addItem(dvd2);
     }
     
+
     public void printCart() {
         System.out.println("***************************GIỎ HÀNG************************");
         System.out.println("Các mặt hàng đã đặt hàng:");
@@ -49,6 +50,7 @@ public class Cart {
         System.out.println("Tổng chi phí: " + String.format("%.2f", totalCost) + " $");
         System.out.println("******************************************************");
     }
+
 
     //---------------
     
