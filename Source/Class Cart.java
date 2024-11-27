@@ -8,6 +8,7 @@ import java.util.List;
 public class Cart {
     private List<CartItem> items;
     private double totalCost;
+    private int quantity;
 
     public Cart() {
         items = new ArrayList<>();
@@ -23,7 +24,49 @@ public class Cart {
         }
         updateTotalCost();
     }
+    //Lab03 ---------
+    public void addDigitalVideoDisc(DVD[] dvdList) {
+        for (DVD dvd : dvdList) {
+            addItem(dvd);
+        }
+    }
+    public void addDigitalVideoDisc(DVD dvd1, DVD dvd2) {
+        addItem(dvd1);
+        addItem(dvd2);
+    }
+    
+    public void printCart() {
+        System.out.println("***************************GIỎ HÀNG************************");
+        System.out.println("Các mặt hàng đã đặt hàng:");
+        
+        int index = 1;
+        for (CartItem item : items) {
+            System.out.println(index + ". " + item.getDvd().toString());
+            index++;
+        }
 
+        System.out.println("Tổng chi phí: " + String.format("%.2f", totalCost) + " $");
+        System.out.println("******************************************************");
+    }
+    
+    public void searchDVDById(String id) {
+        boolean found = false;
+        for (CartItem item : items) {
+            DVD dvd = item.getDvd();
+            if (dvd.getId().equalsIgnoreCase(id)) {
+                System.out.println("Kết quả tìm kiếm:");
+                System.out.println(dvd.toString());
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Không tìm thấy DVD với ID: " + id);
+        }
+    }
+
+    //---------------
+    
     public void removeItem(String dvdId) {
         items.removeIf(item -> item.getDvd().getId().equals(dvdId));
         updateTotalCost();
