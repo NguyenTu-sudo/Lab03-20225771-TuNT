@@ -1,10 +1,9 @@
-package Controller;
+package hust.soict.dsai.controller;
 
-//CustomerController.java
+import hust.soict.dsai.aims.disc.*;
+import hust.soict.dsai.order.Order;
+import hust.soict.dsai.test.cart.Cart;
 
-import DVD.*;
-import Cart.Cart;
-import Order.Order;
 import java.util.*;
 import java.util.stream.Collectors;
 

@@ -1,11 +1,9 @@
-package Cart;
-
-import DVD.DVD;
-
+package hust.soict.dsai.test.disc;
+import hust.soict.dsai.aims.disc.DVD;
 public class TestPassingParameter {
     public static void main(String[] args) {
-        DVD jungleDVD = new DVD("Jungle");
-        DVD cinderellaDVD = new DVD("Cinderella");
+        DVD jungleDVD = new DVD("Jungle", null, null, 0, 0);
+        DVD cinderellaDVD = new DVD("Cinderella", null, null, 0, 0);
 
         DVD[] dvds = {jungleDVD, cinderellaDVD};
         swap(dvds);

@@ -1,7 +1,7 @@
 // CartItem.java
-package Cart;
+package hust.soict.dsai.test.cart;
 
-import DVD.DVD;
+import hust.soict.dsai.aims.disc.DVD;
 
 public class CartItem {
     private DVD dvd;

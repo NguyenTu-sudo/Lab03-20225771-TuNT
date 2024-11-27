@@ -1,9 +1,10 @@
-// Cart.java
-package Cart;
+// hust.soict.dsai.test.cart.java
+package hust.soict.dsai.test.cart;
 
-import DVD.DVD;
 import java.util.ArrayList;
 import java.util.List;
+
+import hust.soict.dsai.aims.disc.DVD;
 
 public class Cart {
     private List<CartItem> items;
@@ -30,13 +31,11 @@ public class Cart {
             addItem(dvd);
         }
     }
-
     public void addDigitalVideoDisc(DVD dvd1, DVD dvd2) {
         addItem(dvd1);
         addItem(dvd2);
     }
     
-
     public void printCart() {
         System.out.println("***************************GIỎ HÀNG************************");
         System.out.println("Các mặt hàng đã đặt hàng:");
@@ -50,7 +49,6 @@ public class Cart {
         System.out.println("Tổng chi phí: " + String.format("%.2f", totalCost) + " $");
         System.out.println("******************************************************");
     }
-
     
     public void searchDVDById(String id) {
         boolean found = false;
@@ -64,7 +62,7 @@ public class Cart {
             }
         }
         if (!found) {
-            System.out.println("Không tìm thấy DVD với ID: " + id);
+            System.out.println("Không tìm thấy hust.soict.dsai.aims.disc với ID: " + id);
         }
     }
 
