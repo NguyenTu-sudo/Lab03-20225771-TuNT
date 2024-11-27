@@ -1,23 +1,26 @@
-// DVD.java
-package DVD;
+// hust.soict.dsai.aims.disc.java
+package hust.soict.dsai.aims.disc;
 
 public class DVD {
-  nbDigitalVideoDiscs++; 
     private String id;
     private String title;
     private String category;
     private double cost;
     private String director;
     private int length;
-
+    private static int nbDigitalVideoDiscs = 0;
 
     public DVD(String id, String title, String category, double cost, String director, int length) {
     	nbDigitalVideoDiscs++; 
-        this.id = "DVD" + nbDigitalVideoDiscs;
+        this.id = "hust.soict.dsai.aims.disc" + nbDigitalVideoDiscs;
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+        this.director = director;
+        this.length = length;
+    }
 
- 
-
-    public DVD(String oldTitle) {
+    public DVD(String oldTitle, String string, String string2, int i, float f) {
         this.title = oldTitle;
         this.id = "Unknown";
         this.category = "Unknown"; 
@@ -25,20 +28,22 @@ public class DVD {
         this.director = "Unknown";
         this.length = 0;
     }
-
+    //Lab3
+    public static int getNbDigitalVideoDiscs() {
+        return nbDigitalVideoDiscs;
+    }
     
     public String toString() {
-        return String.format("DVD - %s - %s - %s - %d: %.2f $", 
+        return String.format("hust.soict.dsai.aims.disc - %s - %s - %s - %d: %.2f $", 
             title, category, director, length, cost);
     }
 
-
 	public void play() {
         if (this.length > 0) {
-            System.out.println("Playing DVD: " + this.title);
-            System.out.println("DVD length: " + this.length);
+            System.out.println("Playing hust.soict.dsai.aims.disc: " + this.title);
+            System.out.println("hust.soict.dsai.aims.disc length: " + this.length);
         } else {
-            System.out.println("DVD cannot be played");
+            System.out.println("hust.soict.dsai.aims.disc cannot be played");
         }
     }
 
